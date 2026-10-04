@@ -1,0 +1,49 @@
+[
+  {
+    "sourcePart": "ppt/slides/slide10.xml",
+    "carrierPath": [
+      0,
+      1,
+      4,
+      0,
+      0,
+      1
+    ],
+    "kind": "shape",
+    "fromSlideId": "256",
+    "toSlideId": "260",
+    "sourceSlideId": "261"
+  },
+  {
+    "sourcePart": "ppt/slides/slide70.xml",
+    "carrierPath": [
+      0,
+      1,
+      6,
+      2,
+      2,
+      1,
+      0,
+      0
+    ],
+    "kind": "run",
+    "fromSlideId": "256",
+    "toSlideId": "260",
+    "sourceSlideId": "262"
+  },
+  {
+    "sourcePart": "ppt/slides/slide40.xml",
+    "carrierPath": [
+      0,
+      1,
+      4,
+      0,
+      0,
+      0
+    ],
+    "kind": "shape",
+    "fromSlideId": "256",
+    "toSlideId": "260",
+    "sourceSlideId": "263"
+  }
+]

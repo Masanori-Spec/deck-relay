@@ -1,0 +1,7 @@
+node_modules/
+dist/
+tests/generated/
+tests/render-evidence/
+tests/browser/artifacts/
+__pycache__/
+*.pyc
