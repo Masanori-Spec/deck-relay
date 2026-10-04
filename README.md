@@ -30,7 +30,7 @@ The three demo edits are two whole-shape clicks and one text-run click in the se
 
 Passed locally on 2026-10-04:
 
-- 41 Node tests, syntax checks and deterministic standalone-worker consistency/execution
+- 47 Node tests, syntax checks and deterministic standalone-worker consistency/execution
 - Independent Python ZIP/XML oracle with separately authored intended selections: 8 slides, 3 selected changes, 26 unselected click/hover actions preserved, 44 untouched package entries and one exact binary media witness
 - A second oracle using python-pptx 1.0.2 checks 16 supported whole-shape actions on each package
 - 22 adversarial mutation rejections after refreshing their hashes, plus a byte-identical no-op positive
@@ -46,6 +46,10 @@ Hosted [run 37180574361](https://github.com/Masanori-Spec/deck-relay/actions/run
 Native PowerPoint, other browser engines, real mobile devices, real printers, formal accessibility/screen-reader conformance, real customer decks and a multi-editor corpus are unverified. Hosted rendering used LibreOffice 7.3.7.2; the separate local renderer was LibreOfficeDev 26.8.0.0.alpha0. These are limited interoperability checks, not PowerPoint slideshow certification.
 
 Independent review is complete: [review report](docs/INDEPENDENT_REVIEW.md). See [verification record](docs/VERIFICATION.md), [independent oracle](docs/ORACLE.md), and [scope / research](docs/RESEARCH.md). The original review remains unchanged; a [dated addendum](docs/REVIEW_ADDENDUM.md) records the later hosted evidence and test-only timing repair. No project license has been selected.
+
+## Input ownership maintenance
+
+A later Node API regression found that passing a Node `Buffer` could let ZIP header writes change the caller's original bytes and fail the export. The reader now takes an owned snapshot before parsing/inflating. Buffer, offset Buffer/Uint8Array and ArrayBuffer regressions pass; the existing demo output and receipt remain byte-identical. The local aggregate is 47 tests. The [independent maintenance review](docs/INPUT_OWNERSHIP_REVIEW.md) passed additional storage and rejection checks. This maintenance revision awaits exact-head hosted verification; bundled browser/render evidence still refers to the earlier pinned commit. [Repair details](docs/INPUT_OWNERSHIP.md)
 
 ## Run
 

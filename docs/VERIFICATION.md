@@ -4,7 +4,7 @@ Version 0.1.0, 2026-10-04 UTC. Hosted evidence is pinned to implementation commi
 
 ## Local model and independent checks
 
-- Node syntax and **41 tests**: identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
+- Node syntax and **47 tests**: identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
 - Deterministic standalone-worker/source consistency and execution in isolated JavaScript globals
 - Independent Python ZIP/XML oracle with separately authored expected carrier paths and destination IDs: 8 slides, 3 intended edits, 26 unselected click/hover carriers, 44 untouched members, 3 appended relationships and an exact opaque media witness
 - python-pptx 1.0.2 reads and checks 16 supported whole-shape actions on each package; it does not write production output
@@ -14,6 +14,14 @@ Version 0.1.0, 2026-10-04 UTC. Hosted evidence is pinned to implementation commi
 - Modified ZIP members preserve legacy comment encoding flags; replay plans use fatal UTF-8 decoding
 - Two response-gate tests validate captured real-event delivery, termination tracking, generation isolation and restoration of the native Worker constructor
 - Static build and no-network/no-persistent-storage source checks
+
+## Subsequent input-ownership maintenance
+
+The exported Node API accepted `Buffer` inputs without taking ownership. Its `slice()` calls retained shared header views, so a changed ZIP write could mutate the caller's input and fail output reinspection. This was reproduced with the synthetic fixture: 21 original bytes changed and `applyPlan` failed with `zip-limit`.
+
+`directory()` now checks input type/size and takes one owned ordinary Uint8Array snapshot before any header slicing or asynchronous inflation. `openZip()` reuses that snapshot. Six new regressions cover Buffer, nonzero-offset Buffer/Uint8Array, ArrayBuffer, original prefix/suffix preservation, caller mutation after inspection, repeat export and independent no-op output storage. The original reproduction now changes zero caller bytes. The actual earlier browser output and receipt are still reproduced byte-for-byte, and their independent oracle still passes.
+
+The 47-test local aggregate includes these six tests. The [independent maintenance review](INPUT_OWNERSHIP_REVIEW.md) passed all 47 tests, 17 additional storage cases, 11 rejection cases and a pooled-Buffer direct-directory write check. Hosted CI for this later repair is pending; no browser run is claimed for the maintenance revision. Earlier hosted artifacts below retain their original commit/run binding. [Full repair record](INPUT_OWNERSHIP.md)
 
 ## Hosted Chromium evidence
 
