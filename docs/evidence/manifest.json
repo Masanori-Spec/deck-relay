@@ -1,0 +1,198 @@
+{
+  "schema": "deck-relay-hosted-evidence-v1",
+  "recordedAt": "2026-10-04",
+  "repository": "https://github.com/Masanori-Spec/deck-relay",
+  "commit": "2ad560fe0c8cdbfdca6c203cd94cc115fca55793",
+  "runId": "37180574361",
+  "runUrl": "https://github.com/Masanori-Spec/deck-relay/actions/runs/37180574361",
+  "scope": "Selected actual artifacts from this exact implementation commit. Later documentation/package revisions require their own external exact-head audit; local packaging does not rerun or prove hosted CI.",
+  "artifactArchives": [
+    {
+      "name": "deckrelay-browser-evidence",
+      "sha256": "7d364d962eceb44e5d404dce5cebc2a288e80996fbd0db39d4f529ed2ab9aea9"
+    },
+    {
+      "name": "deckrelay-render-evidence",
+      "sha256": "d49ef6d3587ed09be12870ee01800a8f8a01756c4a3cab8f9c2924a702305fb5"
+    }
+  ],
+  "archiveDigestVerification": "Publication verifier checked downloaded archive digests before extraction; the selected extracted files are independently hashed below.",
+  "jobs": {
+    "model": {
+      "passed": 4,
+      "nodeMajors": [
+        22,
+        24
+      ],
+      "timezones": [
+        "UTC",
+        "Asia/Tokyo"
+      ],
+      "nodeTestsPerJob": 41
+    },
+    "browser": {
+      "passed": true,
+      "runner": "ubuntu-22.04",
+      "chromiumSandbox": true,
+      "checks": [
+        "Japanese entry, keyboard skip, eight-slide inventory and bilingual responsive screenshots",
+        "exact three-carrier preview exposes shared references and immutable slide identities",
+        "actual editable PPTX, receipt and plan downloads match the engine and independent oracle",
+        "selection or target changes invalidate old preview/export while filters retain explicit hidden selections",
+        "hash-bound plan replay works on original input and blocks stale or unsupported choices",
+        "no-op export is byte-identical and clearly reports zero changes",
+        "reopen exported PPTX, repeated same-file imports and malformed replacement retention",
+        "interrupted worker, oversized replacement and reset cancellation preserve state without resurrection",
+        "offline import, preview and export need no extra module requests",
+        "hostile imported text is escaped and external targets are never visited",
+        "keyboard selection, narrow layouts and printed change preview keep scope visible",
+        "no duplicate IDs, persisted deck, external requests or uncaught page errors"
+      ],
+      "uncaughtErrors": []
+    },
+    "render": {
+      "passed": true,
+      "runner": "ubuntu-22.04",
+      "renderer": "LibreOffice 7.3.7.2 30(Build:2)",
+      "pagesPerDeck": 8,
+      "identicalBeforeAfterPngPairs": 8
+    }
+  },
+  "packageEvidence": {
+    "inputPptxSha256": "5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7",
+    "outputPptxSha256": "52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266",
+    "selectedChanges": 3,
+    "preservedUnselectedCarriers": 26,
+    "unchangedMembers": 44,
+    "appendedRelationships": 3,
+    "pythonPptxWholeShapeChecksPerPackage": 16,
+    "repeatedOutputSha256": "52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266",
+    "noOpOutputSha256": "5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7",
+    "replayOutputAndReceipt": "exactly reproduced from actual downloaded plan"
+  },
+  "visualInspection": {
+    "performedBy": "publication verifier",
+    "inspected": [
+      "browser/desktop-ja.png",
+      "browser/desktop-en-preview.png",
+      "browser/mobile-ja.png",
+      "browser/responsive-320.png",
+      "browser/change-preview.pdf",
+      "render/remapped-1.png",
+      "render/remapped-2.png",
+      "render/remapped-3.png",
+      "render/remapped-4.png",
+      "render/remapped-5.png",
+      "render/remapped-6.png",
+      "render/remapped-7.png",
+      "render/remapped-8.png"
+    ],
+    "printPreviewPages": 1,
+    "result": "Desktop/mobile layout, one-page print preview and all eight remapped slides inspected; no reported clipping or overlap"
+  },
+  "unverified": [
+    "native PowerPoint slideshow click/hover behavior",
+    "other browser engines and operating systems",
+    "real mobile hardware and printers",
+    "formal accessibility and screen-reader conformance",
+    "permission-cleared real-world multi-editor deck corpus",
+    "usefulness, adoption and demand"
+  ],
+  "files": [
+    {
+      "path": "browser/desktop-ja.png",
+      "bytes": 236174,
+      "sha256": "f3f8f4b389b413c47d3edc672d605976116048b5dfcddc1be30aee10883209c5"
+    },
+    {
+      "path": "browser/desktop-en-preview.png",
+      "bytes": 246774,
+      "sha256": "6e9736cb1b404842b4ae9264f3606ed6ef0d605b0dfb28e51a6d35b98a9fd5b0"
+    },
+    {
+      "path": "browser/mobile-ja.png",
+      "bytes": 185542,
+      "sha256": "f819e14057b66345542e5467e10e876f89b0f52ca0a3ff85d77a457ff33ac2a2"
+    },
+    {
+      "path": "browser/responsive-320.png",
+      "bytes": 198500,
+      "sha256": "4991aa8abc99540f020e5b38f69fd71b05b6372a48e578f5975491a98dfcaa26"
+    },
+    {
+      "path": "browser/change-preview.pdf",
+      "bytes": 43039,
+      "sha256": "78e8479fe955f8a5cbf6238b2cbf9ff65e66956725dc3b31d6600961f9cc86e6"
+    },
+    {
+      "path": "browser/remapped.pptx",
+      "bytes": 52467,
+      "sha256": "52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266"
+    },
+    {
+      "path": "browser/receipt.json",
+      "bytes": 4713,
+      "sha256": "55cbd539a88bb5ee1377aa94c5b217c51494c8998716c4392443bee33c6d3537"
+    },
+    {
+      "path": "browser/plan.json",
+      "bytes": 427,
+      "sha256": "2649e69484deb25893b2e164b1f5900eb416ee6a783d411993c69c1a4acfa80a"
+    },
+    {
+      "path": "browser/results.json",
+      "bytes": 1213,
+      "sha256": "2e46511d80279a84766b736d5795ee086b4f58143eaddd9c847732dfc3202738"
+    },
+    {
+      "path": "render/remapped.pdf",
+      "bytes": 27988,
+      "sha256": "40e289afaa1e0b41c3f96cf3d3aeee28b73284cc007df6b0b458d506be71b818"
+    },
+    {
+      "path": "render/results.json",
+      "bytes": 1896,
+      "sha256": "c8b00473c852612f099f99e4b3dc1062ad2fdd9fb96eb14b7d6b8299ff450b90"
+    },
+    {
+      "path": "render/remapped-1.png",
+      "bytes": 36330,
+      "sha256": "82dc1be0c84a0b1f9237fdf4eb3695fad02fdf2f2d8feafba5ccbda1d17c535f"
+    },
+    {
+      "path": "render/remapped-2.png",
+      "bytes": 33629,
+      "sha256": "e744c5c155335de182ecffd2f36e21926ff05cf462d259b26142cd2f635ca296"
+    },
+    {
+      "path": "render/remapped-3.png",
+      "bytes": 29885,
+      "sha256": "35ae03e0ce50782ebbae22a71bf4682b8eb2df3f44f07f169c62152088ced132"
+    },
+    {
+      "path": "render/remapped-4.png",
+      "bytes": 33307,
+      "sha256": "38429708e61c4932fbdbd6156258c04fd23797805f74eb6daef2a46ae93a5fcf"
+    },
+    {
+      "path": "render/remapped-5.png",
+      "bytes": 36698,
+      "sha256": "9a24d7be1390921caa3176bfc25b55eef462b21adce7c3be429f529b6c9e539d"
+    },
+    {
+      "path": "render/remapped-6.png",
+      "bytes": 33712,
+      "sha256": "d5eb3a97e3834d8a29416a5741c9adf6cc3d4839dab12f213b584e77b9fdc262"
+    },
+    {
+      "path": "render/remapped-7.png",
+      "bytes": 29418,
+      "sha256": "f1624f6beb0bd9793fe1d50fd30296d91eadeae0820b8815d50d1109066a10a4"
+    },
+    {
+      "path": "render/remapped-8.png",
+      "bytes": 33640,
+      "sha256": "6a41052fa44f4ad13302dc735c6c52ba8add4bae2c1e6e3484c4e5b34646583b"
+    }
+  ]
+}

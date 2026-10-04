@@ -37,11 +37,15 @@ Passed locally on 2026-10-04:
 - Independent reviewer checks include 64 shared-reference batch combinations and actual UI-handler regressions for stale plans, downloads and worker callbacks
 - LibreOffice opened and rendered source/output. All eight corresponding rendered PNGs are byte-identical, and each remapped slide was visually inspected
 
-Initial hosted run [37180171221](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180171221) at `432f22ef49edb724f1ff4565cd9be9751724680d`: all four model jobs and LibreOffice rendering passed. Seven of twelve browser scenarios passed, including actual download/oracle checks; the interruption scenario exposed a wall-clock timing assumption in its test harness. It now holds real worker responses behind an explicit release gate. The corrected browser suite awaits a new exact-head run. Local browser execution is restricted; no bypass was attempted.
+Hosted [run 37180574361](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180574361), pinned to `2ad560fe0c8cdbfdca6c203cd94cc115fca55793`, passed all six jobs: four Node/Python matrix jobs, 12 sandbox-enabled Chromium scenarios and LibreOffice rendering. Actual downloads, offline/reimport/cancel/reset flows, desktop/mobile views and the single-page print preview were checked. All eight LibreOffice source/output PNG pairs match. Later documentation revisions require a separate exact-head audit; packaging itself does not run hosted CI.
 
-Native PowerPoint, other browser engines, real mobile devices, real printers, formal accessibility/screen-reader conformance, real customer decks and a multi-editor corpus are unverified. The local renderer is the supplied LibreOfficeDev 26.8.0.0.alpha0 build; its result is a limited interoperability check, not PowerPoint slideshow certification.
+[Japanese desktop](docs/evidence/browser/desktop-ja.png) · [English preview](docs/evidence/browser/desktop-en-preview.png) · [Japanese mobile](docs/evidence/browser/mobile-ja.png) · [320 px preview](docs/evidence/browser/responsive-320.png) · [Print preview](docs/evidence/browser/change-preview.pdf)
 
-Independent review is complete: [review report](docs/INDEPENDENT_REVIEW.md). See [verification record](docs/VERIFICATION.md), [independent oracle](docs/ORACLE.md), and [scope / research](docs/RESEARCH.md). Initial source publication has occurred; corrected-head browser verification is pending. No project license has been selected.
+[Actual editable PPTX](docs/evidence/browser/remapped.pptx) · [Receipt](docs/evidence/browser/receipt.json) · [Replay plan](docs/evidence/browser/plan.json) · [Rendered deck](docs/evidence/render/remapped.pdf) · [Exact evidence hashes](docs/evidence/manifest.json)
+
+Native PowerPoint, other browser engines, real mobile devices, real printers, formal accessibility/screen-reader conformance, real customer decks and a multi-editor corpus are unverified. Hosted rendering used LibreOffice 7.3.7.2; the separate local renderer was LibreOfficeDev 26.8.0.0.alpha0. These are limited interoperability checks, not PowerPoint slideshow certification.
+
+Independent review is complete: [review report](docs/INDEPENDENT_REVIEW.md). See [verification record](docs/VERIFICATION.md), [independent oracle](docs/ORACLE.md), and [scope / research](docs/RESEARCH.md). The original review remains unchanged; a [dated addendum](docs/REVIEW_ADDENDUM.md) records the later hosted evidence and test-only timing repair. No project license has been selected.
 
 ## Run
 

@@ -1,39 +1,75 @@
 # Verification record
 
-Version 0.1.0, 2026-10-04 UTC. Initial publication and partial hosted browser run completed; corrected-head verification pending.
+Version 0.1.0, 2026-10-04 UTC. Hosted evidence is pinned to implementation commit [`2ad560fe0c8cdbfdca6c203cd94cc115fca55793`](https://github.com/Masanori-Spec/deck-relay/tree/2ad560fe0c8cdbfdca6c203cd94cc115fca55793), [run 37180574361](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180574361). All six jobs passed. Later documentation/package revisions require their own exact-head audit; running `npm run package` does not rerun hosted CI.
 
-## Passed locally
+## Local model and independent checks
 
-- Node 24.19.0 syntax and 41 Node tests, including identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
+- Node syntax and **41 tests**: identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
 - Deterministic standalone-worker/source consistency and execution in isolated JavaScript globals
-- Independent Python ZIP/XML oracle on the original and remapped synthetic fixture, with separately authored expected carrier paths and destination IDs
-- 8 slides, 3 intended edits, 26 unselected click/hover carriers preserved, 44 untouched package members, 3 appended relationships, exact opaque media witness hash
-- python-pptx 1.0.2 reads and checks 16 supported whole-shape actions on each package. It is not used to write the production result
-- 22 semantic/structural mutation rejections plus one byte-identical no-op positive; mutated package and changed-part hashes are refreshed before checking
-- Eleven independent reviewer tests, including 64 shared-reference batch combinations, XML/ZIP identity counterexamples and actual UI-handler stale-result/error regressions
-- Isolated namespace-allocation regression completes safely with a 128 MiB Node heap cap; inherited namespace frames are shared and explicit attribute/binding/work limits apply
+- Independent Python ZIP/XML oracle with separately authored expected carrier paths and destination IDs: 8 slides, 3 intended edits, 26 unselected click/hover carriers, 44 untouched members, 3 appended relationships and an exact opaque media witness
+- python-pptx 1.0.2 reads and checks 16 supported whole-shape actions on each package; it does not write production output
+- 22 semantic/structural mutation rejections plus one byte-identical no-op positive; mutated package/part hashes are refreshed before checking
+- Eleven independent reviewer tests, including 64 shared-reference batch combinations and actual UI-handler stale-result/error regressions
+- Namespace-allocation regression completes safely under a 128 MiB Node heap; shared namespace frames and explicit attribute/binding/work caps apply
 - Modified ZIP members preserve legacy comment encoding flags; replay plans use fatal UTF-8 decoding
-- Static build and aggregate checks
+- Two response-gate tests validate captured real-event delivery, termination tracking, generation isolation and restoration of the native Worker constructor
+- Static build and no-network/no-persistent-storage source checks
+
+## Hosted Chromium evidence
+
+The four model jobs passed on Node 22/24 × UTC/Asia/Tokyo. Sandboxed Chromium on ubuntu-22.04 passed **all 12 browser scenarios**, with zero uncaught page errors:
+
+1. Japanese/English UI, keyboard skip and eight-slide inventory
+2. Exact three-carrier preview, shared references and stable identities
+3. Actual PPTX/receipt/plan downloads, repeated export and independent oracle
+4. Selection/target invalidation and hidden selections
+5. Hash-bound plan replay and stale/unsupported/malformed UTF-8 rejection
+6. Byte-identical no-op export
+7. Reopen, repeated same-file import and malformed replacement retention
+8. Cancel, oversized replacement and pending-reset flows, with explicitly delivered stale worker callbacks
+9. Import/preview/export offline after initial page load
+10. Escaped hostile imported text and no external requests
+11. Keyboard selection, 1440/768/390/320 px layouts and printed preview
+12. Unique DOM IDs, cleared reload state and no uncaught errors
+
+The publication verifier inspected JA/EN desktop, Japanese mobile, 320 px English preview, and the **single-page printed change preview**. Actual downloaded PPTX and receipt passed the independent oracle. The actual downloaded plan reproduces both the exact output bytes and receipt. Repeat-export and no-op bytes were checked. `scripts/check-evidence.mjs` rechecks the 19 selected artifact hashes, source/output/render binding, replay and independent oracle locally; it is not another browser execution.
+
+Selected actual artifacts:
+
+- [Japanese desktop](evidence/browser/desktop-ja.png), [English preview](evidence/browser/desktop-en-preview.png), [Japanese mobile](evidence/browser/mobile-ja.png), [320 px preview](evidence/browser/responsive-320.png)
+- [One-page change preview](evidence/browser/change-preview.pdf)
+- [Editable remapped PPTX](evidence/browser/remapped.pptx), [receipt](evidence/browser/receipt.json), [replay plan](evidence/browser/plan.json), [browser results](evidence/browser/results.json)
 
 ## LibreOffice evidence
 
-The supplied official runtime includes LibreOfficeDev 26.8.0.0.alpha0 (`2c87e51eeaa2b413ff4ae097b2705eea1995d8e5`). It opened the input/output fixtures and produced eight PDF pages for each. All eight corresponding 96-DPI PNGs are byte-identical. Every remapped slide was visually inspected and found legible without clipping or overlap.
+Hosted **LibreOffice 7.3.7.2 30(Build:2)** on ubuntu-22.04 opened the exact input/output PPTX files and produced eight PDF pages each. All eight corresponding 96-DPI PNG pairs are byte-identical. The publication verifier inspected every remapped slide and reported no clipping or overlap. [Remapped PDF](evidence/render/remapped.pdf) · [Render results](evidence/render/results.json) · [Eight slide PNGs and complete hashes](evidence/manifest.json)
 
-The fixture preparation initially used prefixed package Relationships/Content_Types roots, which this LibreOffice build would not open although the independent parsers accepted them. The fixture authoring step now emits conventional default namespaces for those roots. Production code does not normalize or rewrite unrelated XML. A writable temporary font cache was supplied for the renderer; no sandbox or browser restrictions were bypassed.
+- Input PPTX SHA-256: `5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7`
+- Output PPTX SHA-256: `52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266`
 
-This is a specific LibreOffice parse/render check on an original synthetic deck, not a native PowerPoint slideshow or universal compatibility result. The binary media witness is an unused opaque member; real image/video rendering is not established by that witness.
+A separate local check used the supplied LibreOfficeDev 26.8.0.0.alpha0 build (`2c87e51eeaa2b413ff4ae097b2705eea1995d8e5`), also with eight identical source/output PNG pairs. Cross-version PNG equality is not claimed.
 
-## Initial hosted run and pending corrected browser check
+Fixture preparation initially used prefixed package Relationships/Content_Types roots, which the local LibreOffice build would not open although independent parsers accepted them. Fixture authoring now emits conventional default namespaces. Production code does not normalize unrelated XML. The media witness is an unused opaque member; it establishes byte preservation, not real image/video rendering.
 
-Twelve Chromium browser scenarios: JA/EN UI and screenshots; keyboard skip/selection; exact preview and shared-reference visibility; actual PPTX/receipt/plan downloads with independent oracle; stale/unsupported replay plans; no-op; repeated reimport and malformed replacement retention; interrupted/oversized/reset flows; offline-after-load workflow; hostile imported text/no external requests; responsive widths and print; cleared reload state and no uncaught errors.
+## Artifact provenance
 
-Hosted workflow: four Node 22/24 × UTC/Asia/Tokyo jobs, sandbox-enabled Chromium on ubuntu-22.04, and an official Ubuntu LibreOffice/Poppler render job. The initial exact-head run [37180171221](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180171221) at `432f22ef49edb724f1ff4565cd9be9751724680d` passed all four model jobs and LibreOffice rendering. The first seven browser scenarios passed, including actual PPTX/receipt/plan download validation. Scenario eight failed because its fixed 400 ms worker delay could expire before Playwright finished transferring a 25 MiB oversized replacement. The app already invalidates and stops the old worker before the size rejection. The corrected test holds actual completed worker responses, waits for the replacement/cancel/reset action, then explicitly delivers the stale callback. Two new Node tests check that gate. The corrected twelve-scenario browser suite still awaits a new exact-head hosted run. Local browser launch is already known restricted, so it was not attempted or bypassed.
+The [evidence manifest](evidence/manifest.json) records the exact run/commit, selected file byte lengths/hashes, checks, inputs and limits. The publication verifier checked these downloaded archive SHA-256 digests before extraction:
 
-## Remaining gates
+- Browser: `7d364d962eceb44e5d404dce5cebc2a288e80996fbd0db39d4f529ed2ab9aea9`
+- Render: `d49ef6d3587ed09be12870ee01800a8f8a01756c4a3cab8f9c2924a702305fb5`
 
-1. Refresh and reconcile the frozen source/archive after the deterministic browser-harness repair
-2. Corrected exact-commit hosted CI, followed by inspection of actual screenshots, downloads and render artifacts
-3. Native PowerPoint slideshow tests, other engines/OSes, real mobile devices, real printers and formal accessibility/screen-reader audits
-4. Permission-cleared real-world export corpus, rejection/false-positive measurement and usefulness interviews
+The selected files were then independently hash-checked locally. Their bytes are original hosted artifacts, not recreated screenshots or mockups. Source ZIP/manifests enumerate the final documentation/evidence package; the publisher separately audits the final published head.
 
-No full OOXML validation, malware-safety, native PowerPoint, demand, revenue or novelty claim is made. Resource bounds and unsupported contexts are explicit.
+## Earlier failed run and correction
+
+Initial [run 37180171221](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180171221), commit `432f22ef49edb724f1ff4565cd9be9751724680d`, passed model/render jobs and the first seven browser scenarios. Scenario eight assumed a fixed 400 ms worker delay exceeded the transfer time for a 25 MiB oversized replacement. The previous valid import could legitimately complete first. Independent handler checks passed both orderings. The corrected test holds actual worker responses, then releases their callbacks after cancel/rejection/reset; production code was unchanged. The corrected run passed all twelve scenarios. Local browser restrictions were not bypassed.
+
+## Unverified scope
+
+- Native PowerPoint slideshow click/hover behavior
+- Other browser engines/OSes, real mobile hardware and printers
+- Formal accessibility or screen-reader conformance
+- Permission-cleared real-world multi-editor decks and rejection/false-positive rates
+- Usefulness interviews, adoption, demand and revenue
+
+No full OOXML validation, malware-safety, universal visual-fidelity or novelty claim is made. Receipts are hash-bound evidence for the narrow transformation, not signatures or universal viewer guarantees. See the unchanged [independent review](INDEPENDENT_REVIEW.md) and dated [hosted verification addendum](REVIEW_ADDENDUM.md).

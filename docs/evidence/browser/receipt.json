@@ -1,0 +1,176 @@
+{
+  "schema": "deck-relay-receipt-v1",
+  "engineVersion": "0.1.0",
+  "inputSha256": "5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7",
+  "outputSha256": "52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266",
+  "planSha256": "5447abb569aa8b4669d406973d4946eae119734200574e0b4b5129408261ea2a",
+  "changes": [
+    {
+      "sourcePart": "ppt/slides/slide10.xml",
+      "sourceSlideId": "261",
+      "carrierPath": [
+        0,
+        1,
+        4,
+        0,
+        0,
+        1
+      ],
+      "kind": "shape",
+      "oldRid": "rIdSharedMenu",
+      "newRid": "rIdDeckRelay1",
+      "fromSlideId": "256",
+      "toSlideId": "260",
+      "fromPart": "ppt/slides/slide80.xml",
+      "toPart": "ppt/slides/slide90.xml"
+    },
+    {
+      "sourcePart": "ppt/slides/slide70.xml",
+      "sourceSlideId": "262",
+      "carrierPath": [
+        0,
+        1,
+        6,
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      "kind": "run",
+      "oldRid": "rIdSharedMenu",
+      "newRid": "rIdDeckRelay1",
+      "fromSlideId": "256",
+      "toSlideId": "260",
+      "fromPart": "ppt/slides/slide80.xml",
+      "toPart": "ppt/slides/slide90.xml"
+    },
+    {
+      "sourcePart": "ppt/slides/slide40.xml",
+      "sourceSlideId": "263",
+      "carrierPath": [
+        0,
+        1,
+        4,
+        0,
+        0,
+        0
+      ],
+      "kind": "shape",
+      "oldRid": "rIdSharedMenu",
+      "newRid": "rIdDeckRelay1",
+      "fromSlideId": "256",
+      "toSlideId": "260",
+      "fromPart": "ppt/slides/slide80.xml",
+      "toPart": "ppt/slides/slide90.xml"
+    }
+  ],
+  "changedParts": [
+    {
+      "part": "ppt/slides/slide10.xml",
+      "beforeSha256": "50288929d244ae21b6e6541461c5950c9c49cc6e90dc026c5979af6059606ca0",
+      "afterSha256": "77b3f58d99bfba4267aa20f480794d94f549759072bebb47376a6588c701c5ce"
+    },
+    {
+      "part": "ppt/slides/_rels/slide10.xml.rels",
+      "beforeSha256": "ca8aaed013f9912c78f7197c8e223806601c78d4e25df4df06ecfba2f2b73829",
+      "afterSha256": "ebd54b39bb9629cf646baf9b3e6a75210b720237b62a5ec23c91d976a2c88d07"
+    },
+    {
+      "part": "ppt/slides/slide70.xml",
+      "beforeSha256": "9d9f3c2681e2c2c315522d2ab67e74d997b08f80993575f4a550e924e9f355c6",
+      "afterSha256": "35bd7707fdfe5b07908829564356a945521e5a099c892910cd8d2843f9199187"
+    },
+    {
+      "part": "ppt/slides/_rels/slide70.xml.rels",
+      "beforeSha256": "713abc54f42e44424847506d0f7452a04144e3a8fc418659990487316fdcbe58",
+      "afterSha256": "70ed0fb1f09b04345f69b5277cfe71f2cb210cd3036967386e7f1296e4928d79"
+    },
+    {
+      "part": "ppt/slides/slide40.xml",
+      "beforeSha256": "4a26e52d4f32917f47b5531cbe3358d696b94406714d6f3ab8bf67f4f54b1598",
+      "afterSha256": "b88a44fb91ef26db93f92c2c87174c2172c0f5caef61e9b001908d53465ca502"
+    },
+    {
+      "part": "ppt/slides/_rels/slide40.xml.rels",
+      "beforeSha256": "57b996ccd47e9adad545b856d21671f08df393a3be4f6e1f83770cd01327f668",
+      "afterSha256": "446f99eb2c8163d4387dec6f85d2cadaa1325dd526b622218f2dca214819653e"
+    }
+  ],
+  "unchangedPartCount": 44,
+  "selectedCount": 3,
+  "noOpCount": 0,
+  "slideOrder": [
+    {
+      "id": "256",
+      "part": "ppt/slides/slide80.xml"
+    },
+    {
+      "id": "257",
+      "part": "ppt/slides/slide30.xml"
+    },
+    {
+      "id": "258",
+      "part": "ppt/slides/slide60.xml"
+    },
+    {
+      "id": "259",
+      "part": "ppt/slides/slide20.xml"
+    },
+    {
+      "id": "260",
+      "part": "ppt/slides/slide90.xml"
+    },
+    {
+      "id": "261",
+      "part": "ppt/slides/slide10.xml"
+    },
+    {
+      "id": "262",
+      "part": "ppt/slides/slide70.xml"
+    },
+    {
+      "id": "263",
+      "part": "ppt/slides/slide40.xml"
+    }
+  ],
+  "media": [
+    {
+      "part": "ppt/media/preservation-witness.bin",
+      "sha256": "785b0751fc2c53dc14a4ce3d800e69ef9ce1009eb327ccf458afe09c242c26c9",
+      "unchanged": true
+    }
+  ],
+  "limits": {
+    "inputBytes": 26214400,
+    "outputBytes": 26214400,
+    "entryBytes": 31457280,
+    "xmlBytes": 4194304,
+    "totalBytes": 104857600,
+    "entries": 2500,
+    "ratio": 200,
+    "xmlNodes": 100000,
+    "xmlNodesTotal": 200000,
+    "xmlBytesTotal": 16777216,
+    "xmlDepth": 80,
+    "xmlNameChars": 128,
+    "xmlAttributes": 128,
+    "namespaceBindings": 128,
+    "namespaceUriChars": 512,
+    "namespaceWorkUnits": 4194304,
+    "namespaceWorkUnitsTotal": 16777216,
+    "slides": 300,
+    "carriers": 3000,
+    "relationships": 5000,
+    "idChars": 128,
+    "textChars": 512,
+    "pathChars": 512
+  },
+  "verification": {
+    "reopened": true,
+    "unselectedCarriersUnchanged": true,
+    "unaffectedEntryBytesIdentical": true,
+    "mediaBytesIdentical": true,
+    "nativePowerPointTested": false
+  }
+}

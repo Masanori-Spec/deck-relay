@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "chromiumSandbox": true,
+  "checks": [
+    "Japanese entry, keyboard skip, eight-slide inventory and bilingual responsive screenshots",
+    "exact three-carrier preview exposes shared references and immutable slide identities",
+    "actual editable PPTX, receipt and plan downloads match the engine and independent oracle",
+    "selection or target changes invalidate old preview/export while filters retain explicit hidden selections",
+    "hash-bound plan replay works on original input and blocks stale or unsupported choices",
+    "no-op export is byte-identical and clearly reports zero changes",
+    "reopen exported PPTX, repeated same-file imports and malformed replacement retention",
+    "interrupted worker, oversized replacement and reset cancellation preserve state without resurrection",
+    "offline import, preview and export need no extra module requests",
+    "hostile imported text is escaped and external targets are never visited",
+    "keyboard selection, narrow layouts and printed change preview keep scope visible",
+    "no duplicate IDs, persisted deck, external requests or uncaught page errors"
+  ],
+  "uncaughtErrors": [],
+  "nativePowerPointTested": false
+}

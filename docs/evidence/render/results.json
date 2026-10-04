@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "renderer": "LibreOffice 7.3.7.2 30(Build:2)",
+  "sameRenderedPixelsAllEightSlides": true,
+  "nativePowerPointTested": false,
+  "outputs": {
+    "source": {
+      "inputPptxSha256": "5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7",
+      "pages": 8,
+      "pdfSha256": "87458bb3cc7627e62aa3631cebda36cfdd87daa959a95d77fd5710ffa8d9e92c",
+      "pagePngSha256": [
+        "82dc1be0c84a0b1f9237fdf4eb3695fad02fdf2f2d8feafba5ccbda1d17c535f",
+        "e744c5c155335de182ecffd2f36e21926ff05cf462d259b26142cd2f635ca296",
+        "35ae03e0ce50782ebbae22a71bf4682b8eb2df3f44f07f169c62152088ced132",
+        "38429708e61c4932fbdbd6156258c04fd23797805f74eb6daef2a46ae93a5fcf",
+        "9a24d7be1390921caa3176bfc25b55eef462b21adce7c3be429f529b6c9e539d",
+        "d5eb3a97e3834d8a29416a5741c9adf6cc3d4839dab12f213b584e77b9fdc262",
+        "f1624f6beb0bd9793fe1d50fd30296d91eadeae0820b8815d50d1109066a10a4",
+        "6a41052fa44f4ad13302dc735c6c52ba8add4bae2c1e6e3484c4e5b34646583b"
+      ]
+    },
+    "remapped": {
+      "inputPptxSha256": "52d928e1567d4bfafbca3672fa8d8c10b9ef1c05f0b95640f32bafdb94d75266",
+      "pages": 8,
+      "pdfSha256": "40e289afaa1e0b41c3f96cf3d3aeee28b73284cc007df6b0b458d506be71b818",
+      "pagePngSha256": [
+        "82dc1be0c84a0b1f9237fdf4eb3695fad02fdf2f2d8feafba5ccbda1d17c535f",
+        "e744c5c155335de182ecffd2f36e21926ff05cf462d259b26142cd2f635ca296",
+        "35ae03e0ce50782ebbae22a71bf4682b8eb2df3f44f07f169c62152088ced132",
+        "38429708e61c4932fbdbd6156258c04fd23797805f74eb6daef2a46ae93a5fcf",
+        "9a24d7be1390921caa3176bfc25b55eef462b21adce7c3be429f529b6c9e539d",
+        "d5eb3a97e3834d8a29416a5741c9adf6cc3d4839dab12f213b584e77b9fdc262",
+        "f1624f6beb0bd9793fe1d50fd30296d91eadeae0820b8815d50d1109066a10a4",
+        "6a41052fa44f4ad13302dc735c6c52ba8add4bae2c1e6e3484c4e5b34646583b"
+      ]
+    }
+  }
+}

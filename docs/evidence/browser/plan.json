@@ -1,0 +1,18 @@
+{
+  "schema": "deck-relay-plan-v1",
+  "inputSha256": "5a4ae6ac2625de6882967b6c873734d19915132b1667df4dd62de441969bbcc7",
+  "edits": [
+    {
+      "carrierId": "ppt/slides/slide10.xml#0.1.4.0.0.1",
+      "toSlideId": "260"
+    },
+    {
+      "carrierId": "ppt/slides/slide70.xml#0.1.6.2.2.1.0.0",
+      "toSlideId": "260"
+    },
+    {
+      "carrierId": "ppt/slides/slide40.xml#0.1.4.0.0.0",
+      "toSlideId": "260"
+    }
+  ]
+}
