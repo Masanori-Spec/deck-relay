@@ -30,18 +30,18 @@ The three demo edits are two whole-shape clicks and one text-run click in the se
 
 Passed locally on 2026-10-04:
 
-- 39 Node tests, syntax checks and deterministic standalone-worker consistency/execution
+- 41 Node tests, syntax checks and deterministic standalone-worker consistency/execution
 - Independent Python ZIP/XML oracle with separately authored intended selections: 8 slides, 3 selected changes, 26 unselected click/hover actions preserved, 44 untouched package entries and one exact binary media witness
 - A second oracle using python-pptx 1.0.2 checks 16 supported whole-shape actions on each package
 - 22 adversarial mutation rejections after refreshing their hashes, plus a byte-identical no-op positive
 - Independent reviewer checks include 64 shared-reference batch combinations and actual UI-handler regressions for stale plans, downloads and worker callbacks
 - LibreOffice opened and rendered source/output. All eight corresponding rendered PNGs are byte-identical, and each remapped slide was visually inspected
 
-Authored but not run: 12 sandbox-enabled Chromium browser scenarios, hosted Node/Python matrix, hosted LibreOffice rendering and actual browser download checks. Local browser execution is restricted; no bypass was attempted.
+Initial hosted run [37180171221](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180171221) at `432f22ef49edb724f1ff4565cd9be9751724680d`: all four model jobs and LibreOffice rendering passed. Seven of twelve browser scenarios passed, including actual download/oracle checks; the interruption scenario exposed a wall-clock timing assumption in its test harness. It now holds real worker responses behind an explicit release gate. The corrected browser suite awaits a new exact-head run. Local browser execution is restricted; no bypass was attempted.
 
 Native PowerPoint, other browser engines, real mobile devices, real printers, formal accessibility/screen-reader conformance, real customer decks and a multi-editor corpus are unverified. The local renderer is the supplied LibreOfficeDev 26.8.0.0.alpha0 build; its result is a limited interoperability check, not PowerPoint slideshow certification.
 
-Independent review is complete: [review report](docs/INDEPENDENT_REVIEW.md). See [verification record](docs/VERIFICATION.md), [independent oracle](docs/ORACLE.md), and [scope / research](docs/RESEARCH.md). No publication or project license selection has occurred at this source-review stage.
+Independent review is complete: [review report](docs/INDEPENDENT_REVIEW.md). See [verification record](docs/VERIFICATION.md), [independent oracle](docs/ORACLE.md), and [scope / research](docs/RESEARCH.md). Initial source publication has occurred; corrected-head browser verification is pending. No project license has been selected.
 
 ## Run
 

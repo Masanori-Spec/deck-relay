@@ -1,10 +1,10 @@
 # Verification record
 
-Version 0.1.0, 2026-10-04 UTC. Source-review stage; no publication or browser execution has occurred.
+Version 0.1.0, 2026-10-04 UTC. Initial publication and partial hosted browser run completed; corrected-head verification pending.
 
 ## Passed locally
 
-- Node 24.19.0 syntax and 39 Node tests, including identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
+- Node 24.19.0 syntax and 41 Node tests, including identity/order, shared relationship isolation, no-op byte identity, relationship reuse, unsupported/mixed selection rejection, stale plans, namespace aliases, nested shapes, exact UTF-8 BOM preservation and adversarial package parsing
 - Deterministic standalone-worker/source consistency and execution in isolated JavaScript globals
 - Independent Python ZIP/XML oracle on the original and remapped synthetic fixture, with separately authored expected carrier paths and destination IDs
 - 8 slides, 3 intended edits, 26 unselected click/hover carriers preserved, 44 untouched package members, 3 appended relationships, exact opaque media witness hash
@@ -23,16 +23,16 @@ The fixture preparation initially used prefixed package Relationships/Content_Ty
 
 This is a specific LibreOffice parse/render check on an original synthetic deck, not a native PowerPoint slideshow or universal compatibility result. The binary media witness is an unused opaque member; real image/video rendering is not established by that witness.
 
-## Authored but not run
+## Initial hosted run and pending corrected browser check
 
 Twelve Chromium browser scenarios: JA/EN UI and screenshots; keyboard skip/selection; exact preview and shared-reference visibility; actual PPTX/receipt/plan downloads with independent oracle; stale/unsupported replay plans; no-op; repeated reimport and malformed replacement retention; interrupted/oversized/reset flows; offline-after-load workflow; hostile imported text/no external requests; responsive widths and print; cleared reload state and no uncaught errors.
 
-Hosted workflow: four Node 22/24 × UTC/Asia/Tokyo jobs, sandbox-enabled Chromium on ubuntu-22.04, and an official Ubuntu LibreOffice/Poppler render job. These hosted stages are unrun. Local browser launch is already known restricted, so it was not attempted or bypassed.
+Hosted workflow: four Node 22/24 × UTC/Asia/Tokyo jobs, sandbox-enabled Chromium on ubuntu-22.04, and an official Ubuntu LibreOffice/Poppler render job. The initial exact-head run [37180171221](https://github.com/Masanori-Spec/deck-relay/actions/runs/37180171221) at `432f22ef49edb724f1ff4565cd9be9751724680d` passed all four model jobs and LibreOffice rendering. The first seven browser scenarios passed, including actual PPTX/receipt/plan download validation. Scenario eight failed because its fixed 400 ms worker delay could expire before Playwright finished transferring a 25 MiB oversized replacement. The app already invalidates and stops the old worker before the size rejection. The corrected test holds actual completed worker responses, waits for the replacement/cancel/reset action, then explicitly delivers the stale callback. Two new Node tests check that gate. The corrected twelve-scenario browser suite still awaits a new exact-head hosted run. Local browser launch is already known restricted, so it was not attempted or bypassed.
 
 ## Remaining gates
 
-1. Frozen source/archive reconciliation after the completed independent review
-2. Authorized exact-commit publication and hosted CI, followed by inspection of actual screenshots, downloads and render artifacts
+1. Refresh and reconcile the frozen source/archive after the deterministic browser-harness repair
+2. Corrected exact-commit hosted CI, followed by inspection of actual screenshots, downloads and render artifacts
 3. Native PowerPoint slideshow tests, other engines/OSes, real mobile devices, real printers and formal accessibility/screen-reader audits
 4. Permission-cleared real-world export corpus, rejection/false-positive measurement and usefulness interviews
 
